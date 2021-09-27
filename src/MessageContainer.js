@@ -85,7 +85,7 @@ export default class MessageContainer extends React.PureComponent {
       currentMessage: item,
       previousMessage,
       nextMessage,
-      position: item.user.id === this.props.user.id ? 'right' : 'left',
+      position: item.user._id === this.props.user._id ? 'right' : 'left',
       imageMessages,
     };
 
@@ -115,7 +115,7 @@ export default class MessageContainer extends React.PureComponent {
     return scrollToBottomComponent;
   }
 
-  keyExtractor = item => `${item.id}`;
+  keyExtractor = item => `${item._id}`;
 
   render() {
     if (this.props.messages.length === 0) {
